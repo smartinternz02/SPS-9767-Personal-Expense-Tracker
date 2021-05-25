@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>PERSONAL EXPENSE TRACKER</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="/static/css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="/static/css/style.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+	</head>
+	
+	<body>
+	
+		<div class="wrapper">
+			<!-- header -->
+			<header>
+				<!-- navigation -->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="/home">Home</a></li>
+								<li><a href="/register">Register</a></li>
+								<li><a href="/dashboard">Dashboard</a></li>
+				
+							</ul>
+							 <form class="navbar-form navbar-right" action="/login" method="POST">
+                  <div class="input-group">
+                    <div class="input-group-prepend">    
+                        </div>
+                          {% if msg=="Account doesn't not exist" %}
+                            <div style="color:black" class="mr-3 mt-2">{{ msg }}</div>
+                          {% else %}
+                            <div style="color:black" class="mr-3 mt-2">{{ msg }}</div>
+                          {% endif %}
+                          {% if session['id'] %}
+                              <button style="background-color:  #F4BB44 ;text-align: center ; color:white; align-items: center" type="button" class="btn btn-warning mt-3 mr-3" id="donate" > Username : {{session['username']}}</button>
+                              
+                              <a style="background-color:  #F4BB44 ;text-align: center ; color:white; align-items: center"  type="button" class="btn  mt-3 mr-3" id="donate" href="/logout">LOGOUT</a>
+                          {% else %}
+                            <input type="text" name='uname' class="form-control mr-sm-2" placeholder="Username" aria-label="uname" aria-describedby="basic-addon1"><br>
+                            <input type="password" name='pass' class="form-control mr-sm-2" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
+                            <button class="btn " type="submit">Login</button>
+                          {% endif %}
+                        </div>
+                </form>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			
+			<!-- main content -->
+			<div class="main-content bottom-0">
+				<div class="container">
+					<!-- banner -->
+					<div class="banner pad">
+						<!-- heading -->
+						<h2>Manage<br><span>Your Personal Expenses</span></h2>
+						<!-- paragraph -->
+						<p>Track your money</p>
+					</div>
+				</div>
+				
+				<!-- hero -->
+				<div class="hero pad">
+					<div class="container">
+						<div class="hero-content">
+							<!-- heading -->
+							<h2>Personal Expense Tracker</h2>
+							<!-- paragraph -->
+							<p>Set Budgets</p>
+							<!-- button -->
+							
+						</div>
+					</div>
+				</div>
+				
+				<!-- benefits -->
+				<div class="benefits pad">
+					<div class="container">
+						<div class="default-heading">	
+							<!-- heading -->
+							<h2>Benefits</h2>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-sm-6">
+								<!-- benefits item -->
+								<div class="benefits-item">
+									<!-- icon -->
+									<i class="fa fa-desktop"></i>
+									<!-- heading -->
+									<h3>Track your money</h3>
+									<!-- paragraph -->
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<!-- benefits item -->
+								<div class="benefits-item">
+									<!-- icon -->
+									<i class="fa fa-paper-plane"></i>
+									<!-- heading -->
+									<h3>Set budgets</h3>
+									<!-- paragraph -->
+									
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<!-- benefits item -->
+								<div class="benefits-item">
+									<!-- icon -->
+									<i class="fa fa-briefcase"></i>
+									<!-- heading -->
+									<h3>Visual logs</h3>
+									<!-- paragraph -->
+									
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<!-- benefits item -->
+								<div class="benefits-item">
+									<!-- icon -->
+									<i class="fa fa-envelope"></i>
+									<!-- heading -->
+									<h3> Email Notifications</h3>
+									<!-- paragraph -->
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
+					<p Created by: Sanskriti Kumar </p>
+				</div>
+			</footer>
+		</div>		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+	</body>	
+</html>
